@@ -131,9 +131,120 @@ nav a:hover span{
   justify-content: center;
   align-items: center;
   padding: 15px;
+  justify-items: center;
+  align-content: center;
 }
+
+.card{
+  box-shadow: 0 2px 5px rgba(238, 14, 182, 0.966);
+  border-radius: 1px;
+  padding: 15px;
+  background-color: white;
+  margin:20px;
+}
+
+.card:hover{
+  box-shadow: 1px 3px 6px rgb(15, 176, 224);
+  filter: brightness(1.7);
+  animation-play-state: paused;
+}
+
 .card-img {
   max-width: 100%;
   height: auto;
   overflow: hidden;
+}
+
+.card-data .card-button {
+  padding: 10px 15px;
+  font-size: 15px;
+  color:#fff;
+  background-color: #ff6f61;
+  border: none;
+  border-radius: 7px;
+  margin-left: 78%;
+  text-decoration: none;
+  cursor: pointer;
+  transition: 0.3s ease;
+   animation: animate 5s ease-in-out infinite;
+}
+
+@keyframes animate{
+  0%, 100%{
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgb(245, 4, 4);
+  }
+  45%{
+    box-shadow: 0 0 0 16px rgba(255,255,255, 0);
+  }
+  45%, 50%{
+    transform: scale(1.1);
+  }
+}
+
+
+
+
+
+
+
+
+.spinner{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 200px;
+  height: 200px;
+}
+
+.spinner svg{
+  animation: rotate 1.5s linear infinite;
+}
+
+.spinner circle{
+  animation: color 6s ease-in-out infinite,
+             dash 1.5s ease-in-out infinite;
+  fill: none;
+  stroke-width: 3;
+  stroke: #333;
+  stroke-linecap: round;
+}
+
+@keyframes rotate {
+  from{
+    transform: rotate(0deg);
+  }
+  to{
+    transform: rotate(360deg)
+  }
+}
+
+@keyframes color {
+  100%, 0% {
+    stroke: #ff6f61;
+  }
+  25% {
+    stroke: #fff
+  }
+  50% {
+    stroke: paleturquoise;
+  }
+  75% {
+    stroke: #ff6f61;
+  }
+}
+
+@keyframes dash {
+  0% {
+    stroke-dasharray: 1,200;
+    stroke-dashoffset: 0;
+  }
+  50% {
+    stroke-dasharray: 89,200;
+    stroke-dashoffset: -35;
+  }
+  100% {
+    stroke-dasharray: 89,200;
+    stroke-dashoffset: -124;
+  }
 }
